@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-Voting Voting</title>
+  <link rel="stylesheet" href="/css/voting.css">
+  <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+  <script src="https://kit.fontawesome.com/908e1d826a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="hero">
+    <div class="voting-time">
+     <div class="blob-1"></div>
+      <div class="blob-2"></div>
+      <div class="blob-3"></div>
+      <div class="blob-4"></div>
+      <div class="blob-5"></div>
+      <div class="blob-6"></div>
+      <div class="time-text">
+        <h1>Voting Ends In</h1>
+      </div>
+      <div class="countdown">
+        <a href="https://logwork.com/countdown-pcuc" class="countdown-timer" data-timezone="Asia/Kolkata" 
+        data-textcolor="#006767" data-date="2021-07-18 20:00" data-background="#006767" data-digitscolor="#ffffff"
+         data-unitscolor="#ffffff">My Countdown</a>
+      </div>
+      <% if(user.role == 'admin') { %>
+        <div class="declare">
+            <a href="/declared"><button>Declare Result</button></a>
+        </div>
+    <% } %> 
+    </div>
+    <div class="voting-blank"></div>
+    <div class="voting-panel">
+      <div class="logo">
+        <img src="/img/logo-main3.png" alt="logo">
+        <a href="/">
+          <div class="logo-overlay"></div>
+        </a>
+      </div>
+      <div class="navbar">
+        <div class="nav-left">
+          <!-- <img src="/img/logo-1.png" alt=""> -->
+        </div>
+        <div class="nav-mid"></div>
+        <div class="nav-right">
+          <% if(user) { %>
+            <form id="logout" action="/logout" method="POST">
+              <a onclick="document.getElementById('logout').submit()" href="#" class="logout">Logout</a>
+            </form>
+            <% } else { %>
+              <a href="/login" class="login">Login</a>
+              <% } %>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+        </div>
+      </div>
+      <div class="voting-panel-text">
+        <h3>Voting Panel</h3>
+      </div>
+      <% candidates.forEach(function(candidate) { %>
+        <div class="candidates">
+          <div class="candi-img">
+            <img src="/profilePic/<%= candidate.profilePic %>" alt="">
+            <div class="img-overlay"></div>
+          </div>
+          <div class="candi-details">
+            <div class="uid">
+              <h3>
+                <%= candidate.uid %>
+              </h3>
+            </div>
+            <div class="name">
+              <h3>
+                <%= candidate.name %>
+              </h3>
+            </div>
+            <div class="skills">
+              <h3>
+                <%= candidate.skills %>
+              </h3>
+            </div>
+          </div>
+          <div class="decision">
+            <a href="/voted/<%= candidate.uid %>"><button id="voteBtn">Vote</button></a>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+  </div>
+  
+
+  <script src="/js/app.js"></script>
+</body>
+
+</html>

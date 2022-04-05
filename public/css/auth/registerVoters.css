@@ -1,0 +1,294 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+    background-image: linear-gradient(to top, #01050d, #030f13, #071615, #111a15, #1b1e15);
+    background-repeat: no-repeat;
+    background-size: cover;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  
+  padding: 0;
+  margin: 0;    
+}
+.blob-1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background: #028a8a;
+    border-bottom-right-radius: 100%;
+}
+.blob-2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background: #028a8a;
+    border-top-right-radius: 100%;
+}
+.blob-3{
+    position: absolute;
+    top: 10%;
+    left: 22%;
+    opacity: 0.5;
+    width: 80px;
+    height: 80px;
+    background: #028a8a;
+    border-radius: 50%;
+    animation: breath 4s linear infinite;
+}
+.blob-4{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    opacity: 0.5;
+    width: 50px;
+    height: 50px;
+    background: #028a8a;
+    border-radius: 50%;
+    animation: breath 4s linear infinite;
+}
+.blob-5{
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    opacity: 0.5;
+    width: 60px;
+    height: 60px;
+    background: #028a8a;
+    border-radius: 50%;
+    animation: breath 4s linear infinite;
+}
+.blob-6{
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    opacity: 0.5;
+    width: 70px;
+    height: 70px;
+    background: #028a8a;
+    border-radius: 50%;
+    animation: breath 4s linear infinite;
+}
+@keyframes breath {
+    0%   { transform: scale(1);  }
+    50% { transform: scale(1.2, 1.2); background: darkcyan; }
+    100% { transform: scale(1); }
+}
+.hero{
+    display: flex;
+    height: 100vh;
+}
+.login-link{
+    width: 30%;
+    background: #006767;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.login-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.login-text h1{
+    font-family: 'Akaya Kanadaka', cursive;
+    font-weight: bolder;
+    font-size: 45px;
+    color: rgb(214, 208, 208);
+    margin-bottom: 0px;
+}
+.login-text h4{
+    margin-top: 0px;
+    color: whitesmoke;
+    font-weight: lighter;
+    letter-spacing: 0.5px;
+    font-family: 'Akaya Kanadaka', cursive;
+}
+.loginBtn{
+    margin-top: 20px;
+}
+.loginBtn a button{
+    background: transparent;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1.5px whitesmoke solid;
+    border-radius: 5px;
+    font-weight: bold;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.loginBtn a button:hover{
+    background: #004e4e;
+}
+.register-form{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.form-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.form-text h1{
+    font-size: 40px;
+    color: whitesmoke;
+    font-weight: bold;
+    font-family: 'Akaya Kanadaka', cursive;
+    margin-bottom: 0px;
+}
+.form-text h3{
+    color: whitesmoke;
+    font-size: smaller;
+    font-weight: lighter;
+    font-family: 'Akaya Kanadaka', cursive;
+    margin-top: 0px;
+}
+.form{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form form{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.form form .voter-info{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form form .voter-info label{
+    color: #006767;
+    width: 5%;
+}
+.form form .voter-info input{
+    width: 95%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    background:#404040;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.form form .voter-info input::placeholder{
+    letter-spacing: 1px;
+    font-size: smaller;
+}
+.form form .name-of-voter .fname-of-voter{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.form form .name-of-voter .fname-of-voter label{
+    width: 10%;
+}
+.form form .name-of-voter .fname-of-voter input{
+    width: 70%;
+}
+.form form .name-of-voter .lname-of-voter{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.form form .name-of-voter .lname-of-voter input{
+    width: 75%;
+}
+.voter-info button{
+    width: 40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #006767;
+    border: 1px whitesmoke solid;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.voter-info button:hover{
+    background: transparent;
+}
+form .error{
+    height: 6vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 0px;
+}
+form .error h3{
+    color: rgb(228, 65, 65);
+    font-weight: bold;
+    font-size: small;
+}
+.navbar{
+    width: 30%;
+    right: 0;
+    top: 20px;
+    display: flex;
+    position: absolute;
+}
+.logo{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    top: 5px;
+    left: 10px;
+}
+.logo img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.logo-overlay{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.3);
+    top: 0;
+    left: 0;
+}
+.navbar a{
+    width: 50%;
+    text-decoration: none;
+    color: #c0bebe;
+    letter-spacing: 1px;
+    font-size: medium;
+    font-family: 'Montserrat', sans-serif;
+}
+.navbar a:last-child{
+    color: darkcyan;
+}
+.navbar a:hover{
+    color: rgb(105, 138, 138);
+}

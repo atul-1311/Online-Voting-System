@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Voting Candidate - profile</title>
+    <link rel="stylesheet" href="/css/candidate/candiProfile.css">
+    <script src="https://kit.fontawesome.com/908e1d826a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Email Verification Template -->
+    <% if(candidate.emailVerified == 'false') { %>
+        <div class="template-bg">
+            <div class="template-hero">
+                <div class="template">
+                    <div class="template-head">
+                        <h2>Please enter the One Time Password</h2>
+                        <h3>sent to <b><u><%= candidate.email %></u></b></h3>
+                        <% if(messages.otperror) { %>
+                            <h3 class="otperr"><%= messages.otperror %></h3>
+                        <% } %>    
+                    </div>
+                    <form action="/verifyEmail" method="POST" class="template-form">
+                        <div class="input-otp">
+                            <input type="text" name="otp">
+                        </div>
+                        <div class="verifyEmail">
+                            <button type="submit">SUBMIT</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="template-svg">
+                    <img src="/img/template.svg" alt="">
+                </div>
+            </div>
+        </div>
+    <% } %>    
+
+
+    <% if(candidate.isAccepted == 'false' && user.role=='candidate') { %>
+        <div class="vermssg">
+            <img src="/img/process.gif" alt="" height="20px" width="20px">
+            <h4>
+                Your verification is in progress..........
+            </h4>
+        </div>
+    <% } %>
+
+    <div class="logo">
+        <img src="/img/logo-main3.png" alt="logo">
+        <a href="/"><div class="logo-overlay"></div></a>
+    </div>
+    <div class="navbar">
+        <div class="nav-left">
+            <!-- <img src="/img/logo-1.png" alt=""> -->
+        </div>
+        <div class="nav-mid"></div>
+        <div class="nav-right">
+            <% if(user) { %>
+                <form id="logout" action="/logout" method="POST">
+                    <a onclick="document.getElementById('logout').submit()" href="#" class="logout">Logout</a>
+                </form>
+            <% } else { %>
+                <a href="/login" class="login">Login</a>
+            <% } %>
+            <a href="/result">Result</a>
+            <a href="/voting">Voting</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="profilePic">
+            <div class="picture">
+                <img src="/profilePic/<%= candidate.profilePic %>" alt="" width="160px" height="160px">
+                <% if(candidate.isAccepted == 'true') { %>
+                    <i class="fas fa-check-circle"></i>
+                <% } %>    
+                <div class="profile-overlay"></div>
+            </div>
+            <% if(user.role == 'candidate') { %>
+                <div class="upload-img">
+                    <form action="/profilePic/<%= candidate.uid %>" method="POST" enctype="multipart/form-data">
+                        <input type="file" id="inputfile" name="file">
+                        <div class="profile-pic-btn">
+                            <button class="pic-submit" type="submit">Save</button>
+                            <button class="pic-reset" type="reset">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            <% } %>    
+        </div>
+        <div class="personalInfo">
+            <div class="pinfo-text">
+                <h3>Candidate Personal Information</h3>
+            </div>
+            <div class="pinfo-chart">
+                <div class="info">
+                    <h3 class="label"><i class="fas fa-id-card"></i>&nbsp;UID : </h3>&nbsp;&nbsp;
+                    <h3 class="value"><%= candidate.uid %></h3>
+                </div>
+                <div class="info">
+                    <h3 class="label"><i class="fas fa-user"></i>&nbsp;Name : </h3>&nbsp;&nbsp;
+                    <h3 class="value"><%= candidate.name %></h3>
+                </div>
+                <div class="info">
+                    <h3 class="label"><i class="fas fa-envelope"></i>&nbsp;Email : </h3>&nbsp;&nbsp;
+                    <h3 class="value"><%= candidate.email %></h3>
+                </div>
+            </div>
+            <div class="pinfo-chart">
+                <div class="info">
+                    <h3 class="label"><i class="fas fa-user-tie"></i>&nbsp;Father's Name : </h3>&nbsp;&nbsp;
+                    <h3 class="value"><%= candidate.father %></h3>
+                </div>
+                <div class="info">
+                    <h3 class="label"><i class="fas fa-user-tie"></i>&nbsp;Mother's Name : </h3>&nbsp;&nbsp;
+                    <h3 class="value"><%= candidate.mother %></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="hero">
+        <div class="skill-info">
+            <div class="skills">
+                <h3 class="skill-head">Skills : </h3>
+                <h3 class="skill-content"><%= candidate.skills %></h3>
+            </div>
+            <div class="reason">
+                <h3 class="reason-head">Reason : </h3>
+                <h3 class="reason-content"><%= candidate.reason %></h3>
+            </div>
+        </div>
+        <div class="academic">
+            <div class="ainfo-text">
+                <h3>Candidate Academic Information</h3>
+            </div>
+            <table class="ainfo-table">
+                <tr>
+                    <th class="table-heading">10<sup>th</sup> %age</th>
+                    <th class="table-heading">10<sup>th</sup> Passing Year</th>
+                    <th class="table-heading">12<sup>th</sup> %age</th>
+                    <th class="table-heading">12<sup>th</sup> Passing Year</th>
+                    <th class="table-heading">Last Sem CGPA</th>
+                </tr>
+                <tr>
+                    <th class="table-data"><%= candidate.tenthMarks %></th>
+                    <th class="table-data"><%= candidate.tenthYear %></th>
+                    <th class="table-data"><%= candidate.twelveMarks %></th>
+                    <th class="table-data"><%= candidate.twelveYear %></th>
+                    <th class="table-data"><%= candidate.semcgpa %></th>
+                </tr>
+            </table>
+        </div>
+    </section>
+</body>
+</html>

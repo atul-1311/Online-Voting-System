@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-Voting Login</title>
+  <link rel="stylesheet" href="/css/auth/login.css">
+  <script src="https://kit.fontawesome.com/908e1d826a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="blob-1"></div>
+  <div class="blob-2"></div>
+  <div class="blob-3"></div>
+  <div class="blob-4"></div>
+  <div class="blob-5"></div>
+  <div class="blob-6"></div>
+  <div class="hero">
+    <div class="login-link">
+      <div class="login-text">
+        <h1>Hello, Friend!</h1>
+        <h4>Enter your personal details <br>&nbsp;&nbsp; and start jouney with us.</h4>
+      </div>
+      <div class="loginBtn">
+        <a href="#"><button>Sign UP</button></a>
+      </div>
+    </div>
+    <div class="login-form">
+      <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="form-text">
+        <h1>Sign in to Ed-Sci</h1>
+        <h3>Login to explore more features of us.</h3>
+      </div>
+      <div class="form">
+        <form action="/login" method="POST">
+          <!-- <% if(messages.votererr) { %>
+            <div class="voter-info error">
+              <h3><%= messages.votererr %></h3>
+            </div>
+          <% } %>   -->
+          <% if(messages.loginerror) { %>
+            <div class="login-info error">
+              <h3><%= messages.loginerror %></h3>
+            </div>
+          <% } %>  
+          <div class="login-info">
+            <label for="email"><i class="fas fa-envelope"></i></label>
+            <input type="email" id="email" placeholder="Email" name="email" value="">
+          </div>
+          <div class="login-info">
+            <label for="password"><i class="fas fa-unlock-alt"></i></label>
+            <input type="password" id="password" placeholder="**************" name="password">
+          </div>
+          <div class="login-info">
+            <label for=""></label>
+            <button type="submit">Sign IN</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

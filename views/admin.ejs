@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Voting Admin</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+    <div class="logo">
+        <img src="/img/logo-main3.png" alt="logo">
+        <a href="/"><div class="logo-overlay"></div></a>
+    </div>
+    <div class="navbar">
+        <div class="nav-left">
+            <!-- <img src="/img/logo-1.png" alt=""> -->
+        </div>
+        <div class="nav-mid"></div>
+        <div class="nav-right">
+            <% if(user) { %>
+                <form id="logout" action="/logout" method="POST">
+                    <a onclick="document.getElementById('logout').submit()" href="#" class="logout">Logout</a>
+                </form>
+            <% } else { %>
+                <a href="/login" class="login">Login</a>
+            <% } %>
+            <a href="/result">Result</a>
+            <a href="/statistic">Statistic</a>
+            <a href="/voting">Voting</a>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="new-request-text">
+            <h3>New Requests</h3>
+        </div>
+        <% candidates.forEach(function(candidate) { %>
+            <% if(candidate.isAccepted=='false' && candidate.emailVerified=='true' ) { %>
+                <div class="new-request">
+                    <div class="candi-img">
+                        <img src="/profilePic/<%= candidate.profilePic %>" alt="">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <div class="candi-details">
+                        <div class="uid">
+                            <h3 class="new_request_profile">
+                                <a href="/profile/<%= candidate.uid %>"><%= candidate.uid %></a>
+                            </h3>
+                        </div>
+                        <div class="name">
+                            <h3>
+                                <%= candidate.name %>
+                            </h3>
+                        </div>
+                        <div class="skills">
+                            <h3>
+                                <%= candidate.skills %>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="decision">
+                        <a href="/accept/<%= candidate.uid %>"><button>Accept</button></a>
+                        <a href="/deny/<%= candidate.uid %>"><button>Deny</button></a>
+                    </div>
+                </div>
+            <% } %>
+        <% }) %>
+    </div>
+    <div class="main">
+        <div class="accepted-request-text">
+            <h3>Accepted Requests</h3>
+        </div>
+        <% candidates.forEach(function(candidate) { %>
+            <% if(candidate.isAccepted=='true' ) { %>
+                <div class="accepted-request">
+                    <div class="candi-img">
+                        <img src="/profilePic/<%= candidate.profilePic %>" alt="">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <div class="candi-details">
+                        <div class="uid">
+                            <h3>
+                                <%= candidate.uid %>
+                            </h3>
+                        </div>
+                        <div class="name">
+                            <h3>
+                                <%= candidate.name %>
+                            </h3>
+                        </div>
+                        <div class="skills">
+                            <h3>
+                                <%= candidate.skills %>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="view-profile">
+                        <a href="/profile/<%= candidate.uid %>"><button>View Profile</button></a>
+                    </div>
+                </div>
+            <% } %>
+        <% }) %>
+    </div>
+</body>
+
+</html>

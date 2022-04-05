@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Voting About</title>
+    <link rel="stylesheet" href="/css/about.css">
+    <script src="https://kit.fontawesome.com/908e1d826a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+            <img src="/img/main-logo.gif" alt=""> 
+            <div class="logo-overlay"></div>
+        </div>
+        <div class="nav-mid"></div>
+        <div class="nav-right">
+            <% if(user) { %>
+                <form id="logout" action="/logout" method="POST">
+                    <a onclick="document.getElementById('logout').submit()" href="#" class="logout">Logout</a>
+                </form>
+            <% } else { %>
+                <a href="/login" class="login">Login</a>
+            <% } %>
+            <a href="/result">Result</a>
+            <a href="/">Home</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <p class="para-1">
+        The Ed-Sci Club was founded in 2021 by Atul Ranjan and Shikhar Singh Verma where students can bring out their creativity through various activities
+        which is provided in the club.
+    </p>
+    <p class="para-2">
+        Back in 2019 an idea sprang in minds to cultivate the curiosity and critical thinking of students to sharpen their minds. At initial stage this club was comprising of only ten to 20 students but currently there are over more than 10,000 students engaged in this club.
+    </p>
+    <p class="para-3">
+        A variety of quizzes, projects, learnings and tests are scheduled at regular intervals to bring out the most from every student engaged in here.
+    </p>
+    <div class="social">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-instagram-square"></i>
+        <i class="fab fa-linkedin"></i>
+    </div>
+</body>
+</html>

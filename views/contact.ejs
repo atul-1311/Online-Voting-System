@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Voting Contact</title>
+    <link rel="stylesheet" href="/css/contact.css">
+    <script src="https://kit.fontawesome.com/908e1d826a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+            <img src="/img/main-logo.gif" alt=""> 
+            <div class="logo-overlay"></div>
+        </div>
+        <div class="nav-mid"></div>
+        <div class="nav-right">
+            <% if(user) { %>
+                <form id="logout" action="/logout" method="POST">
+                    <a onclick="document.getElementById('logout').submit()" href="#" class="logout">Logout</a>
+                </form>
+            <% } else { %>
+                <a href="/login" class="login">Login</a>
+            <% } %>
+            <a href="/result">Result</a>
+            <a href="/">Home</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="text">
+        <h3>CO-FOUNDERS</h3>
+    </div>
+    <div class="atul">
+        <div class="f-img">
+            <img src="/img/ab.jpg" alt="">
+            <div class="f-img-overlay"></div>
+        </div>
+        <div class="name">
+            <h3>Atul Ranjan</h3>
+        </div>
+        <div class="call">
+            <i class="fab fa-whatsapp-square"></i>
+            <h3>+91-7979831221</h3>
+        </div>
+        <div class="linkedin">
+            <i class="fab fa-linkedin"></i>
+            <h3><a target="_blank" href="https://linkedin.com/in/atul-ranjan-46ba671b2">Linkedin</a></h3>
+        </div>
+    </div>
+    <div class="shikhar">
+        <div class="f-img">
+            <img src="/img/ssv.jpg" alt="">
+            <div class="f-img-overlay"></div>
+        </div>
+        <div class="name">
+            <h3>Shikhar Singh Verma</h3>
+        </div>
+        <div class="call">
+            <i class="fab fa-whatsapp-square"></i>
+            <h3>+91-7409418430</h3>
+        </div>
+        <div class="linkedin">
+            <i class="fab fa-linkedin"></i>
+            <h3><a target="_blank" href="https://www.linkedin.com/in/shikhar-singh-verma-72b2b51b8/">Linkedin</a></h3>
+        </div>
+    </div>
+</body>
+</html>

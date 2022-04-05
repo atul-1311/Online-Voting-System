@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    background-image: linear-gradient(to top, #01050d, #030f13, #071615, #111a15, #1b1e15);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
+    padding: 0;
+    margin: 0; 
+    width: 100%;
+}
+::-webkit-scrollbar{
+    width: 0px;
+}
+.hero{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.voting-time{
+    width: 30%;
+    background: #006767;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+.time-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.time-text h1{
+    font-family: 'Akaya Kanadaka', cursive;
+    font-weight: bolder;
+    font-size: 50px;
+    color: rgb(214, 208, 208);
+    margin-bottom: 0px;
+    letter-spacing: 2px;
+}
+.declare{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.declare button{
+    width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px whitesmoke solid;
+    border-radius: 10px;
+    color: whitesmoke;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    background: transparent;
+    cursor: pointer;
+}
+.declare button:hover{
+    background: #004242;
+}
+.voting-blank{
+    width: 30%;
+}
+.blob-1{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: #028a8a;
+    border-bottom-left-radius: 100%;
+    z-index: 3;
+}
+.blob-2{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: #028a8a;
+    border-top-left-radius: 100%;
+    z-index: 3;
+}
+.blob-3{
+    position: absolute;
+    top: 10%;
+    right: 70%;
+    opacity: 0.5;
+    width: 80px;
+    height: 80px;
+    background: #028a8a;
+    border-radius: 50%;
+    z-index: 3;
+    animation: breath 4s linear infinite;
+}
+.blob-4{
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    opacity: 0.5;
+    width: 50px;
+    height: 50px;
+    background: #028a8a;
+    border-radius: 50%;
+    z-index: 3;
+    animation: breath 4s linear infinite;
+}
+.blob-5{
+    position: absolute;
+    top: 70%;
+    right: 15%;
+    opacity: 0.5;
+    width: 60px;
+    height: 60px;
+    background: #028a8a;
+    border-radius: 50%;
+    z-index: 3;
+    animation: breath 4s linear infinite;
+}
+.blob-6{
+    position: absolute;
+    top: 80%;
+    right: 65%;
+    opacity: 0.5;
+    width: 70px;
+    height: 70px;
+    background: #028a8a;
+    border-radius: 50%;
+    z-index: 3;
+    animation: breath 4s linear infinite;
+}
+.voting-panel{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 180px;
+    overflow-y: scroll;
+    position: relative;
+}
+.voting-panel-text{
+    width: 75%;
+    display: flex;
+}
+.voting-panel-text h3{
+    color: rgb(177, 174, 174);
+    margin-left: 10px;
+    letter-spacing: 1px;
+}
+.candidates{
+    width: 75%;
+    height: 24vh;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1.5px teal solid;
+    box-shadow: inset 2px 2px 12px #004242,
+            inset -2px -2px 12px #004242;
+    margin-bottom: 20px; 
+}
+.candi-img{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.candi-img img{
+    width: 130px;
+    height: 130px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 2px teal dotted;
+    padding: 2px;
+}
+.img-overlay{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 15px;
+    background: rgba(0,0,0,0.3);
+}
+.candi-details{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.uid h3{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: teal;
+}
+.name h3{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: whitesmoke;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+.skills h3{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: rgb(179, 175, 175);
+    font-weight: lighter;
+    font-size: smaller;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+.decision{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.decision a button{
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    border-radius: 50%;
+    background: #006767;
+    border: none;
+    color: whitesmoke;
+    font-size: large;
+    font-weight: bolder;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.decision a button:hover{
+    background: rgb(170, 50, 50);
+}
+@keyframes breath {
+    0%   { transform: scale(1);  }
+    50% { transform: scale(1.2, 1.2); background: darkcyan; }
+    100% { transform: scale(1); }
+}
+
+.logo{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    border-radius: 50%;
+}
+.logo img{
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.logo-overlay{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.3);
+}
+.navbar{
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    z-index: 5;
+}
+.nav-left{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-left img{
+    height: 60px;
+    width: 110px;
+}
+.nav-mid{
+    width: 30%;
+}
+.nav-right{
+    width: 40%;
+    display: flex;
+    margin-left: 5%;
+}
+.nav-right a,#logout{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: whitesmoke;
+    letter-spacing: 1px;
+    font-size: medium;
+    font-family: 'Montserrat', sans-serif;
+}
+.nav-right a:hover{
+    color: darkcyan;
+}
+.nav-right a:last-child{
+    color: darkcyan;
+}
+.nav-right a:last-child:hover{
+    color: whitesmoke;
+}
+

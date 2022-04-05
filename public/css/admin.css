@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+body {
+    background-image: linear-gradient(to top, #01050d, #030f13, #071615, #111a15, #1b1e15);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
+    padding: 0;
+    margin: 0;    
+}
+::-webkit-scrollbar{
+    width: 0px;
+}
+.logo{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    border-radius: 50%;
+}
+.logo img{
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.logo-overlay{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.3);
+}
+.navbar{
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    z-index: 5;
+}
+.nav-left{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-left img{
+    height: 60px;
+    width: 110px;
+}
+.nav-mid{
+    width: 30%;
+}
+.nav-right{
+    width: 30%;
+    display: flex;
+    margin-left: 5%;
+}
+.nav-right a,#logout{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: whitesmoke;
+    letter-spacing: 1px;
+    font-size: medium;
+    font-family: 'Montserrat', sans-serif;
+}
+.nav-right a:hover{
+    color: darkcyan;
+}
+.nav-right a:last-child{
+    color: darkcyan;
+}
+.nav-right a:last-child:hover{
+    color: whitesmoke;
+}
+.hero{
+    margin-top: 180px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.new-request-text{
+    width: 75%;
+    display: flex;
+} 
+.new-request-text h3{
+    color: rgb(177, 174, 174);
+    margin-left: 10px;
+    letter-spacing: 1px;
+}
+.new-request{
+    height: 24vh;
+    display: flex;
+    width: 75%;
+    border-radius: 10px;
+    border: 1.5px teal solid;
+    box-shadow: inset 2px 2px 12px #004242,
+            inset -2px -2px 12px #004242;
+    margin-bottom: 20px;        
+}
+.candi-img{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.candi-img img{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px teal dotted;
+    padding: 2px;
+}
+.img-overlay{
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.3);
+}
+.candi-details{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.uid h3{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: teal;
+}
+.new-request .candi-details .uid h3 a{
+    text-decoration: none;
+    color: teal;
+}
+.new-request .candi-details .uid h3 a:hover{
+    color: rgb(4, 207, 207);
+}
+.name h3{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: whitesmoke;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+.skills h3{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: rgb(179, 175, 175);
+    font-weight: lighter;
+    font-size: smaller;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+.decision{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.decision a button{
+    width: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: #006767;
+    border-radius: 5px;
+    border: 1.5px whitesmoke solid;
+    color: whitesmoke;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.decision a button:hover{
+    background: transparent;
+}
+.decision a:last-child button{
+    background: transparent;
+    margin-left: 10px;
+}
+.decision a:last-child button:hover{
+    background: #006767;
+}
+
+.main{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.accepted-request-text{
+    width: 75%;
+    display: flex;
+} 
+.accepted-request-text h3{
+    color: rgb(177, 174, 174);
+    margin-left: 10px;
+    letter-spacing: 1px;
+}
+.accepted-request{
+    height: 24vh;
+    display: flex;
+    width: 75%;
+    border-radius: 10px;
+    border: 1.5px teal solid;
+    box-shadow: inset 2px 2px 12px #004242,
+            inset -2px -2px 12px #004242;
+    margin-bottom: 20px;        
+}
+.view-profile{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.view-profile button{
+    width: 150px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: #006767;
+    border-radius: 5px;
+    border: 1.5px whitesmoke solid;
+    color: whitesmoke;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.view-profile button:hover{
+    background: transparent;
+}

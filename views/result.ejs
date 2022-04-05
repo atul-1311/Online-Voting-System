@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Voting Result</title>
+    <link rel="stylesheet" href="/css/result.css">
+    <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+    <script src="https://kit.fontawesome.com/908e1d826a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <% if(messages.notDeclared) { %>
+        <div class="hero">
+            <div class="voting-time">
+                <div class="blob-1"></div>
+                <div class="blob-2"></div>
+                <div class="blob-3"></div>
+                <div class="blob-4"></div>
+                <div class="blob-5"></div>
+                <div class="blob-6"></div>
+                <div class="time-text">
+                    <h1>Voting Ends In</h1>
+                </div>
+                <div class="countdown">
+                    <a href="https://logwork.com/countdown-pcuc" class="countdown-timer" data-timezone="Asia/Kolkata" 
+                    data-textcolor="#006767" data-date="2021-07-18 20:00" data-background="#006767" data-digitscolor="#ffffff"
+                    data-unitscolor="#ffffff">My Countdown</a>
+                </div>
+                <% if(user.role == 'admin') { %>
+                    <div class="declare">
+                        <a href="/declared"><button>Declare Result</button></a>
+                    </div>
+                <% } %>    
+            </div>
+            <div class="voting-blank"></div>
+            <div class="result-panel">
+                <div class="logo">
+                    <img src="/img/logo-main3.png" alt="logo">
+                    <a href="/">
+                        <div class="logo-overlay"></div>
+                    </a>
+                </div>
+                <div class="navbar">
+                    <div class="nav-left">
+                        <!-- <img src="/img/logo-1.png" alt=""> -->
+                    </div>
+                    <div class="nav-mid"></div>
+                    <div class="nav-right">
+                        <% if(user) { %>
+                            <form id="logout" action="/logout" method="POST">
+                                <a onclick="document.getElementById('logout').submit()" href="#" class="logout">Logout</a>
+                            </form>
+                        <% } else { %>
+                            <a href="/login" class="login">Login</a>
+                        <% } %>
+                        <a href="/statistic">Statistic</a>
+                        <a href="/about">About</a>
+                        <a href="/contact">Contact</a>
+                    </div>
+                </div>
+                <div class="result-panel-text">
+                    <h3>Live Voting Result</h3>
+                
+                        <h5 class="isVoted">" Your response has been recorded! Wait for the result. " 📋🎉</h5>
+                         
+                </div>
+                <div class="result-card-layout">
+                    <% candidates.forEach(function(candidate) { %>
+                        <div class="result-card">
+                            <div class="candi-img">
+                                <img src="/profilePic/<%= candidate.profilePic %>" alt="">
+                                <div class="candi-img-overlay"></div>
+                            </div>
+                            <div class="candi-profile">
+                                <div class="candi-details">
+                                    <div class="uid">
+                                        <h3><%= candidate.uid %></h3>
+                                    </div>
+                                    <div class="name">
+                                        <h3><%= candidate.name %></h3>
+                                    </div>
+                                    <div class="count">
+                                        <h3>Count : 
+                                           &nbsp; <h4 class="candi-vote-count"><%= candidate.count %></h4>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="candi-rank">
+                                    <h3>Rank</h3>
+                                    <h3><%= candidates.indexOf(candidate) + 1 %></h3>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>    
+                </div>
+            </div>
+        </div>
+    <% } %>    
+
+
+    <!-- final result -->
+    <% if(messages.declared){ %>
+        <div class="final-result">
+            <h3 class="winner-title">🎉 Winner! 🎉</h3>
+            <a class="home-link" href="/">Home</a>
+            <img class="confetti" src="/img/final-result.gif" alt="">
+            <div class="winner-card">
+                <div class="winner-img">
+                    <img src="/profilePic/<%= winners[0].profilePic %>" alt="">
+                    <div class="winner-img-overlay"></div>
+                </div>
+                <div class="winner-profile">
+                    <div class="winner-details">
+                        <div class="winner-uid">
+                            <h3><%= winners[0].uid %></h3>
+                        </div>
+                        <div class="winner-name">
+                            <h3><%= winners[0].name %></h3>
+                        </div>
+                        <div class="winner-count">
+                            <h3>Count : 
+                               &nbsp; <h4 class="winner-vote-count"><%= winners[0].count %></h4>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="winner-margin">
+                        <h3>Margin</h3>
+                        <h3><%= winners[0].count - winners[1].count %></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="winner-overlay"></div>
+        </div>
+    <% } %>    
+
+</body>
+
+</html>

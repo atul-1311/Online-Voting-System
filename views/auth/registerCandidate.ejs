@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Voting Candidates - Registration</title>
+    <link rel="stylesheet" href="/css/auth/registerCandidate.css">
+    <script src="https://kit.fontawesome.com/908e1d826a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
+    <div class="blob-3"></div>
+    <div class="blob-4"></div>
+    <div class="blob-5"></div>
+    <div class="blob-6"></div>
+    <div class="hero">
+        <div class="login-link">
+            <div class="login-text">
+                <h1>Welcome Back!</h1>
+                <h4>To keep connected with us please <br>&nbsp;&nbsp; login with your personal info</h4>
+            </div>
+            <div class="loginBtn">
+                <a href="/login"><button>Sign IN</button></a>
+            </div>
+        </div>
+        <div class="register-form">
+            <div class="logo">
+                <img src="/img/logo-main3.png" alt="" style="cursor: pointer;">
+                <a href="/"><div class="logo-overlay"></div></a>
+            </div>
+            <div class="navbar">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div class="form-text">
+                <h1>Create Account</h1>
+                <h3>Register here to be eligible for Candidate.</h3>
+            </div>
+            <div class="form">
+                <form action="/registerCandidate" method="POST">
+                    <div class="personal-info">
+                        <div class="pinfo">
+                            <h3>Personal Info</h3>
+                        </div>
+                        <% if(messages.candierror) { %>
+                            <div class="pinfo error">
+                                <h3><%= messages.candierror %></h3>
+                            </div>
+                        <% } %>    
+                        <div class="pinfo">
+                            <label for="uid"><i class="fas fa-id-card"></i></label>
+                            <input type="text" name="uid" id="uid" placeholder="Unique ID (ex: 20BCS0001)" value="<%= messages.uid %>">
+                        </div>
+                        <div class="pinfo">
+                            <label for="name"><i class="fas fa-user"></i></label>
+                            <input type="text" name="name" id="name" placeholder="Name" value="<%= messages.name %>">
+                        </div>
+                        <div class="pinfo">
+                            <label for="email"><i class="fas fa-envelope"></i></label>
+                            <input type="email" name="email" id="email" placeholder="Email" value="<%= messages.email %>">
+                        </div>
+                        <div class="pinfo">
+                            <label for="password"><i class="fas fa-unlock-alt"></i></label>
+                            <input type="password" name="password" id="password" placeholder="**************">
+                        </div>
+                        <div class="pinfo">
+                            <label for="father"><i class="fas fa-user-tie"></i></label>
+                            <input type="text" name="father" id="father" placeholder="Father's Name" value="<%= messages.father %>">
+                        </div>
+                        <div class="pinfo">
+                            <label for="mother"><i class="fas fa-user-tie"></i></label>
+                            <input type="text" name="mother" id="mother" placeholder="Mother's Name" value="<%= messages.mother %>">
+                        </div>
+                    </div>
+                    <div class="academic-info">
+                        <div class="ainfo">
+                            <h3>Academic Info</h3>
+                        </div>
+                        <div class="ainfo">
+                            <div class="tenthMarks">
+                                <label for="tenmarks"></label>
+                                <input type="text" name="tenthMarks" id="tenmarks" placeholder="10th %age">
+                            </div>
+                            <div class="tenthyear">
+                                <label for="tenyear"></label>
+                                <input type="text" name="tenthYear" id="tenyear" placeholder="10th Passing Year">
+                            </div>
+                        </div>
+                        <div class="ainfo">
+                            <div class="twelfthMarks">
+                                <label for="twelvemarks"></label>
+                                <input type="text" name="twelveMarks" id="twelvemarks" placeholder="12th %age">
+                            </div>
+                            <div class="twelfthyear">
+                                <label for="twelveyear"></label>
+                                <input type="text" name="twelveYear" id="twelveyear" placeholder="12th Passing Year">
+                            </div>
+                        </div>
+                        <div class="ainfo">
+                            <label for="semcgpa"></label>
+                            <input type="text" name="semcgpa" id="semcgpa" placeholder="Last Semester CGPA">
+                        </div>
+                        <div class="ainfo">
+                            <label for="skills"></label>
+                            <input type="text" name="skills" id="skills" placeholder="Skills You Possess">
+                        </div>
+                        <div class="ainfo">
+                            <label for="reson"></label>
+                            <input type="text" name="reason" id="reason"
+                                placeholder="Why You Want to be a Candidate ? (max 100 words)">
+                        </div>
+                        <div class="ainfo">
+                            <button type="submit">Sign UP</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

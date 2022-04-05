@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Voting Statistics</title>
+    <link rel="stylesheet" href="/css/statistic.css">
+    <script src="https://kit.fontawesome.com/908e1d826a.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.0/chart.min.js"></script>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="/img/logo-main3.png" alt="logo">
+        <a href="/"><div class="logo-overlay"></div></a>
+    </div>
+    <div class="navbar">
+        <div class="nav-left">
+            <!-- <img src="/img/logo-1.png" alt=""> -->
+        </div>
+        <div class="nav-mid"></div>
+        <div class="nav-right">
+            <% if(user) { %>
+                <form id="logout" action="/logout" method="POST">
+                    <a onclick="document.getElementById('logout').submit()" href="#" class="logout">Logout</a>
+                </form>
+            <% } else { %>
+                <a href="/login" class="login">Login</a>
+            <% } %>
+            <a href="/result">Result</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+    <div class="hero-1">
+        <canvas id="result-line-chart"></canvas>
+        <canvas id="result-bar-chart"></canvas>
+    </div>
+    <button id="chart-btn" class="bar-chart-btn">Bar Chart</button>
+    <div class="no_of_voters">
+        <div class="no_of_voters_text">
+            <h3>Voters Count &nbsp;: </h3>
+        </div>
+        <div class="voters_number">
+            <h3 id="total_num_voters"></h3>
+        </div>
+    </div>
+    <!-- <div class="bar-doughnut">
+        <canvas id="result-bar-chart"></canvas>
+        <canvas id="result-doughnut-chart"></canvas>
+    </div>
+    <div class="bubble-line">
+        <canvas id="result-bubble-chart"></canvas>
+        <canvas id="result-line-chart"></canvas> 
+    </div> -->
+    <input type="hidden" id="hiddenResult" value="<%= JSON.stringify(candidates) %>">
+    <input type="hidden" id="hiddenVotersCount" value="<%= JSON.stringify(totalVoters) %>">
+
+
+    <script src="/js/app.js"></script>
+</body>
+</html>

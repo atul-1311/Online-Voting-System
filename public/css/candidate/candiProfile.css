@@ -1,0 +1,431 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body{
+    background-image: linear-gradient(to top, #01050d, #030f13, #071615, #111a15, #1b1e15);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
+    padding: 0;
+    margin: 0; 
+}
+::-webkit-scrollbar{
+    width: 0px;
+}
+.vermssg{
+    position: absolute;
+    top: 20px;
+    left: 20%;
+    display: flex;
+    align-items: center;
+}
+.vermssg h4{
+    color: rgb(199, 45, 45);
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.logo{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    border-radius: 50%;
+}
+.logo img{
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.logo-overlay{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.3);
+    z-index: 10;
+}
+.main{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: flex-end;
+}
+.profilePic{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.picture{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+.picture img{
+    border-radius: 50%;
+    border: 2px darkcyan dashed;
+    padding: 2px;
+    object-fit: cover;
+}
+.picture i{
+    position: absolute;
+    bottom: 10%;
+    right: 36.5%;
+    color: rgb(2, 177, 177);
+    font-size: 28px;
+    z-index: 10;
+}
+.picture .profile-overlay{
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+}
+.upload-img{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form input[type=file]::file-selector-button{
+    margin-bottom: 5px;
+    margin-left: 25px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 100px;
+    color: whitesmoke;
+    border: 1px whitesmoke solid;
+    border-radius: 5px;
+    background: #006767;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+form input[type=file]::file-selector-button:hover{
+    background: transparent;
+}
+.upload-img button{
+    width: 100px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: whitesmoke;
+    border: 1px whitesmoke solid;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.upload-img button:hover{
+    background: #006767;
+}
+.personalInfo{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pinfo-text{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8vh;
+    margin-bottom: 30px;
+    border-bottom: 1px teal solid;
+}
+.pinfo-text h3{
+    color: darkcyan;
+    font-weight: bold;
+    font-family: 'Akaya Kanadaka', cursive;
+}
+.pinfo-chart{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+.label{
+    font-size: medium;
+    font-weight: bold;
+    color: darkcyan;
+}
+.value{
+    font-size: medium;
+    font-weight: lighter;
+    color: rgb(189, 189, 189);
+}
+
+.hero{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.skill-info{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.skills{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20%;
+}
+.skill-head{
+    width: 40%;
+    color: teal;
+    font-weight: bold;
+    height: 4vh;
+    border-bottom: 0.5px teal solid;
+    margin-bottom: 0px;
+}
+.skill-content{
+    font-size: smaller;
+    font-weight: lighter;
+    color: rgb(189, 189, 189);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    letter-spacing: 0.8px;
+}
+.reason{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20%;
+}
+.reason-head{
+    width: 40%;
+    color: teal;
+    font-weight: bold;
+    height: 4vh;
+    border-bottom: 0.5px teal solid;
+    margin-bottom: 0px;
+}
+.reason-content{
+    font-size: smaller;
+    font-weight: lighter;
+    color: rgb(189, 189, 189);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    letter-spacing: 0.8px;
+}
+.academic{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ainfo-text{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8vh;
+    margin-bottom: 30px;
+    border-bottom: 1px teal solid;
+}
+.ainfo-text h3{
+    color: darkcyan;
+    font-weight: bold;
+    font-family: 'Akaya Kanadaka', cursive;
+}
+.ainfo-table{
+    width: 100%;
+    margin-top: 20px;
+}
+.ainfo-table .table-heading{
+    color: teal;
+    border-right: 0.5px rgb(2, 94, 94) dotted;
+}
+.ainfo-table .table-data{
+    padding-top: 20px;
+    color: rgb(189, 189, 189);
+    font-weight: lighter;
+}
+.navbar{
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    z-index: 5;
+}
+.nav-left{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-left img{
+    height: 60px;
+    width: 110px;
+}
+.nav-mid{
+    width: 30%;
+}
+.nav-right{
+    width: 30%;
+    display: flex;
+    margin-left: 5%;
+}
+.nav-right a,#logout{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: whitesmoke;
+    letter-spacing: 1px;
+    font-size: medium;
+    font-family: 'Montserrat', sans-serif;
+}
+.nav-right a:hover{
+    color: darkcyan;
+}
+.nav-right a:last-child{
+    color: darkcyan;
+}
+.nav-right a:last-child:hover{
+    color: whitesmoke;
+}
+
+.template-bg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(22, 22, 22);
+    z-index: 50;
+}
+.template-hero{
+    position: absolute;
+    width: 50%;
+    height: 50vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    z-index: 51;
+}
+.template{
+    width: 50%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+}
+.template-head{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.template-head h2{
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: whitesmoke;
+    letter-spacing: 1px;
+}
+.template-head h3{
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: darkcyan;
+    letter-spacing: 1px;
+    margin-top: 0px;
+}
+.template-form{
+    height: 20vh;
+    width: 100%;
+}
+.input-otp{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-otp input{
+    width: 70%;
+    height: 5vh;
+    background: transparent;
+    border: 2px #006767 solid;
+    border-radius: 5px;
+    font-size: 25px;
+    text-align: center;
+    color: whitesmoke;
+    letter-spacing: 10px;
+}
+.input-otp input:focus{
+    outline: none;
+    box-shadow: -7px 6px 25px -2px rgba(0,103,103,0.7);
+-webkit-box-shadow: -7px 6px 25px -2px rgba(0,103,103,0.7);
+-moz-box-shadow: -7px 6px 25px -2px rgba(0,103,103,0.7);
+}
+.verifyEmail{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.verifyEmail button{
+    width: 72%;
+    height: 5.5vh;
+    background: #006767;
+    border: 2px #006767 solid;
+    border-radius: 5px;
+    color: whitesmoke;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.verifyEmail button:hover{
+    background: transparent;
+}
+.template-svg{
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.template-svg img{
+    height: 50vh;
+    width: 95%;
+}
+.template-head .otperr{
+    color: rgb(194, 3, 3);
+}
